@@ -1,5 +1,6 @@
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const navContainer = document.getElementById('nav');
+const mediaQuery = document.querySelector('.mediaQuery')
 const toggleIcon = document.getElementById('toggle-icon');
 const image1 = document.getElementById('image1');
 const image2 = document.getElementById('image2');
@@ -22,6 +23,9 @@ const darkMode = boolean => {
   const class2 = boolean ? 'fa-moon' : 'fa-sun';
 
   navContainer.style.backgroundColor = `rgb(${
+    boolean ? '0 0 0' : '255 255 255'
+  } / 50%)`;
+  mediaQuery.style.backgroundColor = `rgb(${
     boolean ? '0 0 0' : '255 255 255'
   } / 50%)`;
   textBox.style.backgroundColor = `rgb(${
