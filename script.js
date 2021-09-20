@@ -1,10 +1,8 @@
 const toggleSwitch = document.querySelector('input[type="checkbox"]');
 const navContainer = document.getElementById('nav');
-const mediaQuery = document.querySelector('.mediaQuery')
+const mediaQuery = document.querySelector('.mediaQuery');
 const toggleIcon = document.getElementById('toggle-icon');
-const image1 = document.getElementById('image1');
-const image2 = document.getElementById('image2');
-const image3 = document.getElementById('image3');
+const images = document.querySelectorAll('img');
 const textBox = document.getElementById('text-box');
 
 // Smooth scrolling
@@ -31,13 +29,9 @@ const darkMode = boolean => {
   textBox.style.backgroundColor = `rgb(${
     boolean ? '255 255 255' : '0 0 0'
   } / 50%)`;
-  toggleIcon.children[0].textContent = `${
-    boolean ? 'Dark Mode' : 'Light Mode'
-  }`;
+  toggleIcon.children[0].textContent = boolean ? 'Dark Mode' : 'Light Mode';
   toggleIcon.children[1].classList.replace(class1, class2);
-  image1.src = `./img/undraw_proud_coder_${boolean ? 'dark' : 'light'}.svg`;
-  image2.src = `./img/undraw_feeling_proud_${boolean ? 'dark' : 'light'}.svg`;
-  image3.src = `./img/undraw_conceptual_idea_${boolean ? 'dark' : 'light'}.svg`;
+  images.forEach((img, i) => img.src = `./img/${i}_${boolean ? 'dark' : 'light'}.svg`)
 };
 
 // Switch Theme Dynamically
